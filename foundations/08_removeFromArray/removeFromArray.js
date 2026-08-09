@@ -1,20 +1,8 @@
-const removeFromArray = function(arr, arg) {
-    newarr = []
-    for(i = 0; i < arr.length; i++){
-        console.log(arr[i])
-        if(arr[i] == arg){
-            continue
-        }else{
-            newarr.push(arr[i])
-        }
-    }
-    return newarr
+const removeFromArray = function(arr, ...args) {
+  return arr.filter(item => !args.includes(item));
 };
 
-
-let test = removeFromArray([1,2,3,4], 0)
-console.log(test)
-
+console.log(removeFromArray([1,5,4,6,7,83,4,5,6,3], 5,4,3))
 
 // Do not edit below this line
 module.exports = removeFromArray;
